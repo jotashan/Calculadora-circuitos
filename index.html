@@ -25,6 +25,11 @@
 
     /* ── NAV ── */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(20,30,48,0.92);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -153,11 +158,17 @@
   <img class="hero-icon" src="icon.png" alt="CircuitCalc" />
   <h1>Calcula circuitos<br/>en <span>segundos</span></h1>
   <p>La herramienta de escritorio que los ingenieros y estudiantes de electrónica necesitan. Rápida, precisa y sin conexión.</p>
-  <div class="hero-buttons" id="download">
-    <a href="https://github.com/jotashan/Calculadora-circuitos/releases/download/untagged-ce42810da06d4523d389/Calculadora.de.Circuitos.1.0.0.dmg" class="btn-primary"><span style="font-size:1.2em"></span> Descargar para Mac</a>
-    <a href="https://github.com/jotashan/Calculadora-circuitos/releases/download/v1.0.0/Calculadora.de.Circuitos.Setup.1.0.0.Windows.exe" class="btn-secondary"><span style="font-size:1.2em">🪟</span> Descargar para Windows</a>
+  <p style="font-size:1rem;font-weight:700;margin-bottom:0.6rem;color:#ffffff;">Descargar versi&oacute;n m&aacute;s reciente</p><div class="hero-buttons" id="download">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+      <a href="https://github.com/jotashan/Calculadora-circuitos/releases/download/MacOS_v1.1/Calculadora.de.Circuitos.1.1.0.dmg" class="btn-primary"><span style="font-size:1.2em"></span> Descargar para Mac</a>
+      <span style="font-size:0.78rem;color:#8892a4;">v1.1.0 &nbsp;&middot;&nbsp; macOS 12 o superior</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+      <a href="https://github.com/jotashan/Calculadora-circuitos/releases/download/Windows_v1.1/Calculadora.de.Circuitos.Setup.1.1.0.Windows.exe" class="btn-secondary"><span style="font-size:1.2em">🪟</span> Descargar para Windows</a>
+      <span style="font-size:0.78rem;color:#8892a4;">v1.1.0 &nbsp;&middot;&nbsp; Windows 10 o superior (64 bits)</span>
+    </div>
   </div>
-  <p class="badge">v1.0.0 · Gratuita · macOS 12+ · Windows 10+ · <a href="https://github.com/jotashan/Calculadora-circuitos/releases" style="color:#f5c518;text-decoration:none;">Ver todas las versiones ↗</a></p>
+  <p class="badge">Gratuita &nbsp;&middot;&nbsp; <a href="https://github.com/jotashan/Calculadora-circuitos/releases" style="color:#f5c518;text-decoration:none;">Ver todas las versiones ↗</a></p>
 </section>
 
 <section class="features" id="features">
@@ -217,20 +228,17 @@
   </div>
 </section>
 <section style="max-width:700px;margin:0 auto 4rem;padding:0 2rem;">
-  <h2 style="font-size:1.8rem;text-align:center;margin-bottom:2rem;">Novedades v1.0.0</h2>
+  <h2 style="font-size:1.8rem;text-align:center;margin-bottom:2rem;">Novedades v1.1.0</h2>
   <div style="background:#1c2840;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.8rem;">
-    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;">
-      <span style="background:#f5c518;color:#141e30;font-size:0.75rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px;">v1.0.0</span>
-      <span style="color:#8892a4;font-size:0.85rem;">Junio 2026 &mdash; Lanzamiento inicial</span>
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.4rem;">
+      <span style="background:#f5c518;color:#141e30;font-size:0.75rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px;">v1.1.0</span>
+      <span style="color:#8892a4;font-size:0.85rem;">Junio 2026 &mdash; Segunda versi&oacute;n</span>
     </div>
-    <ul style="color:#8892a4;font-size:0.9rem;line-height:2.2;list-style:none;padding:0;">
-      <li>&#128640; Lanzamiento oficial de la Calculadora de Circuitos</li>
-      <li>&#9889; Soporte para circuitos CA (RPS) y CC</li>
-      <li>&#128208; Componentes: R, L, C, fuentes de tensi&oacute;n y corriente</li>
-      <li>&#128279; Fuentes dependientes (VCVS, CCVS, VCCS, CCCS)</li>
-      <li>&#128202; Resoluci&oacute;n simb&oacute;lica con Leyes de Kirchhoff</li>
-      <li>&#127919; Equivalente Th&eacute;venin / Norton</li>
-      <li>&#128269; B&uacute;squeda de &omega; por par&aacute;metros de circuito</li>
+    <ul style="color:#8892a4;font-size:0.9rem;line-height:1;list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem;">
+      <li style="display:flex;gap:0.8rem;align-items:flex-start;"><span>📄</span><div><strong style="color:#fff;">Nombre de archivo en la barra superior</strong><br/>Muestra solo el nombre del archivo, sin la ruta completa.</div></li>
+      <li style="display:flex;gap:0.8rem;align-items:flex-start;"><span>➡️</span><div><strong style="color:#fff;">Flecha de sentido en fuentes dependientes</strong><br/>Las fuentes controladas por tensi&oacute;n o corriente muestran una flecha sobre el elemento de control indicando el sentido de referencia del c&aacute;lculo.</div></li>
+      <li style="display:flex;gap:0.8rem;align-items:flex-start;"><span>🔄</span><div><strong style="color:#fff;">Flecha invertible con un clic</strong><br/>La flecha de referencia se puede invertir con un simple clic y permanece visible mientras el elemento est&eacute; asignado como control.</div></li>
+      <li style="display:flex;gap:0.8rem;align-items:flex-start;"><span>🪟</span><div><strong style="color:#fff;">Soporte oficial para Windows</strong><br/>Instalador NSIS, icono .ico nativo y soporte completo para rutas con barra invertida.</div></li>
     </ul>
   </div>
 </section>
